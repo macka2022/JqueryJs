@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Creation Form plusieurs etapes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="myForm" action="" method="post" autocomplete="off">
+      <h1 align="center">Inscription</h1>
+
+      <div style="text-align: center">
+        <span class="step" id="step-1">1</span>
+        <span class="step" id="step-2">2</span>
+        <span class="step" id="step-3">3</span>
+        <span class="step" id="step-4">4</span>
+      </div>
+
+      <div class="tab" id="tab-1">
+        <p>Prénom & Nom :</p>
+        <input type="text" placeholder="Prénom" name="prenom" />
+        <input type="text" placeholder="Nom" name="nom" />
+        <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="suiv(1)">Suivant</div><!--run(1, 2)-->
+        </div>
+      </div>
+
+      <div class="tab" id="tab-2">
+        <p>Contact Infos :</p>
+        <input type="text" placeholder="Email" name="email" />
+        <input type="text" placeholder="Téléphone" name="telephone" />
+        <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(2, 1);">Précédent</div><!--run(2, 1)-->
+            <div class="index-btn" onclick="suiv(2)">Suivant</div><!--run(2, 3)-->
+        </div>
+      </div>
+
+      <div class="tab" id="tab-3">
+        <p>Date de naissance :</p>
+        <input type="number" min="1" max="31" placeholder="dd" name="jour" />
+        <input type="number" min="1" max="12" placeholder="mm" name="mois" />
+        <input
+          type="number"
+          min="1900"
+          max="2010"
+          placeholder="yy"
+          name="annee"
+        />
+        <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(3, 2);">Précédent</div><!--run(3, 2)-->
+            <div class="index-btn" onclick="suiv(3)">Suivant</div><!--run(3, 4)-->
+        </div>
+      </div>
+
+      <div class="tab" id="tab-4">
+        <p>Credentials :</p>
+        <input type="text" placeholder="Username" name="username" />
+        <input type="password" placeholder="Password" name="password" />
+        <div class="index-btn-wrapper">
+            <div class="index-btn" onclick=";">Précédent</div><!--run(4, 3)-->
+            <div class="index-btn" onclick="suiv(4)">Suivant</div><!--run(4, 5)-->
+        </div>
+      </div>
+
+      <div class="tab" id="tab-5">
+          <div class="index-btn-wrapper">
+              <div class="index-btn" onclick="run(5, 4);">Précédent</div><!--run(5, 4)-->
+              <button class="index-btn"
+                      type="submit"
+                      name="submit"
+                      style="background: blue"
+                      onclick="run(5, 6);">
+                  Submit
+              </button><!--run(5, 6)-->
+          </div>
+      </div>
+      <div class="tab" id="tab-6">
+        <div class="index-btn-wrapper">
+          <h1 align="center">Merci ! A la prochaine inchallah ! Bye !</h1>
+        </div>
+      </div>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
